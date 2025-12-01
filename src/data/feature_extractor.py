@@ -168,7 +168,7 @@ class FeatureExtractor:
 
         # Sort columns for consistency
         target_dummies = target_dummies[sorted(target_dummies.columns)]
-        return target_dummies.values
+        return target_dummies.values.astype(np.float64)
 
     def _extract_text_stats(self, df: pd.DataFrame, text_column: str) -> np.ndarray:
         """Extract text statistics"""

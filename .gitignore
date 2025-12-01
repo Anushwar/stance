@@ -49,12 +49,14 @@ results/
 # data/
 # *.csv
 
-# Model checkpoints
+# Model checkpoints and trained models
 *.pkl
 *.joblib
 *.h5
 *.pt
 *.pth
+models/
+!models/.gitkeep
 
 # OS
 .DS_Store
