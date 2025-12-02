@@ -30,6 +30,11 @@ python src/models/train_all_traditional_ml.py
 python src/models/train_bert.py
 python src/models/train_bertweet.py
 python src/models/train_twhin_bert.py
+
+# Large Language Models (LLMs) - Run Jupyter notebooks
+jupyter notebook notebooks/llm_experiments/llama3_1_8B_lora_semeval_finetuned.ipynb
+jupyter notebook notebooks/llm_experiments/mistral7B_LoRA_semeval.ipynb
+jupyter notebook notebooks/llm_experiments/phi3_LoRA_semeval.ipynb
 ```
 
 ## Results
@@ -43,6 +48,16 @@ python src/models/train_twhin_bert.py
 | K-Nearest Neighbors | 41.01% | 41.13% |
 
 **Best configuration:** TF-IDF (3K unigrams) + Target encoding + SMOTE balancing
+
+### Large Language Models (LLMs)
+
+| Model | Parameters | Training Method | Macro F1 | Accuracy |
+|-------|-----------|-----------------|----------|----------|
+| Mistral-7B | 7B | LoRA Fine-tuning | 77.53% | 80.02% |
+| Llama 3.1 | 8B | LoRA Fine-tuning | 75.71% | 78.52% |
+| Phi-3 | 3.8B | LoRA Fine-tuning | 73.18% | 75.46% |
+
+**Training:** All LLMs use LoRA (Low-Rank Adaptation) for parameter-efficient fine-tuning on the SemEval-2016 dataset. Results show LLMs significantly outperform traditional ML and transformer models.
 
 ### Key Findings
 
